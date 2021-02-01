@@ -34,7 +34,7 @@ public class ProductDAO {
 		if (rs.next()) {
 		    String name = rs.getString("name");
 		    String description = rs.getString("description");
-		    double unitPrice = rs.getInt("unitPrice");
+		    double unitPrice = rs.getDouble("unitPrice");
 		    int quantity = rs.getInt("quantity");
 		    
 		    product = new Product(id, name, description, unitPrice, quantity);
