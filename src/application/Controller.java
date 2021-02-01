@@ -3,7 +3,6 @@ package application;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -138,7 +137,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("inventory.jsp");
 			dispatcher.forward(request, response);
 		} else if (searchTerm.equalsIgnoreCase("searchNAME")) {
-			int count = 0;
 			for (int i = 0; i < products.size(); i++) {
 				if (!products.get(i).getName().equalsIgnoreCase(searchFor)) {
 					products.remove(i);
@@ -150,7 +148,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("inventory.jsp");
 			dispatcher.forward(request, response);
 		} else if (searchTerm.equalsIgnoreCase("searchDESCRIPTION")) {
-			int count = 0;
 			for (int i = 0; i < products.size(); i++) {
 				if (!products.get(i).getDescription().equalsIgnoreCase(searchFor)) {
 					products.remove(i);
@@ -162,7 +159,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("inventory.jsp");
 			dispatcher.forward(request, response);
 		} else if (searchTerm.equalsIgnoreCase("searchPrice")) {
-			int count = 0;
 			for (int i = 0; i < products.size(); i++) {
 				if (!Double.toString(products.get(i).getUnitPrice()).equalsIgnoreCase(searchFor)) {
 					products.remove(i);
@@ -174,7 +170,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("inventory.jsp");
 			dispatcher.forward(request, response);
 		} else if (searchTerm.equalsIgnoreCase("searchQUANTITY")) {
-			int count = 0;
 			for (int i = 0; i < products.size(); i++) {
 				if (!Integer.toString(products.get(i).getQuantity()).equalsIgnoreCase(searchFor)) {
 					products.remove(i);
